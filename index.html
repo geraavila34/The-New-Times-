@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The New Times - Noticias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <span class="date" id="currentDate"></span>
+                <h1 class="logo">THE NEW TIMES</h1>
+                <button class="search-btn" onclick="toggleSearch()">🔍</button>
+            </div>
+            <div class="search-bar" id="searchBar" style="display:none;">
+                <input type="text" id="searchInput" placeholder="Buscar artículos..." onkeyup="searchArticles()">
+            </div>
+            <nav class="nav">
+                <a href="#" class="active" onclick="filterCategory('all')">Todas</a>
+                <a href="#" onclick="filterCategory('politica')">Política</a>
+                <a href="#" onclick="filterCategory('economia')">Economía</a>
+                <a href="#" onclick="filterCategory('tecnologia')">Tecnología</a>
+                <a href="#" onclick="filterCategory('cultura')">Cultura</a>
+                <a href="#" onclick="filterCategory('deportes')">Deportes</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breaking-news" id="breakingNews" style="display:none;">
+        <div class="container">
+            <span class="breaking-label">ÚLTIMA HORA</span>
+            <span id="breakingContent"></span>
+        </div>
+    </div>
+
+    <main class="container">
+        <section class="featured" id="featuredArticle"></section>
+        <section class="articles-grid" id="articlesGrid"></section>
+    </main>
+
+    <div class="modal" id="articleModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 The New Times. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
